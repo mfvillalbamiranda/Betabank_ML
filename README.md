@@ -1,24 +1,37 @@
 # Betabank_ML
 
 # Descripción del proyecto
-La compañía móvil Megaline no está satisfecha al ver que muchos de sus clientes utilizan planes heredados. Quieren desarrollar un modelo que pueda analizar el comportamiento de los clientes y recomendar uno de los nuevos planes de Megaline: Smart o Ultra.
+Los clientes de Beta Bank se están yendo, cada mes, poco a poco. Los banqueros descubrieron que es más barato salvar a los clientes existentes que atraer nuevos.
 
-Tienes acceso a los datos de comportamiento de los suscriptores que ya se han cambiado a los planes nuevos (del proyecto del sprint de Análisis estadístico de datos). Para esta tarea de clasificación debes crear un modelo que escoja el plan correcto. Como ya hiciste el paso de procesar los datos, puedes lanzarte directo a crear el modelo.
+Necesitamos predecir si un cliente dejará el banco pronto. Tú tienes los datos sobre el comportamiento pasado de los clientes y la terminación de contratos con el banco.
 
-Desarrolla un modelo con la mayor exactitud posible. En este proyecto, el umbral de exactitud es 0.75. Usa el dataset para comprobar la exactitud.
+Crea un modelo con el máximo valor F1 posible. Para aprobar la revisión, necesitas un valor F1 de al menos 0.59. Verifica F1 para el conjunto de prueba. 
 
-# Instrucciones del proyecto.
-Abre y examina el archivo de datos. Dirección al archivo:/datasets/users_behavior.csv Descarga el dataset
-Segmenta los datos fuente en un conjunto de entrenamiento, uno de validación y uno de prueba.
-Investiga la calidad de diferentes modelos cambiando los hiperparámetros. Describe brevemente los hallazgos del estudio.
-Comprueba la calidad del modelo usando el conjunto de prueba.
-Tarea adicional: haz una prueba de cordura al modelo. Estos datos son más complejos que los que habías usado antes así que no será una tarea fácil. Más adelante lo veremos con más detalle.
+Además, debes medir la métrica AUC-ROC y compararla con el valor F1.
 
-# Descripción de datos
-Cada observación en el dataset contiene información del comportamiento mensual sobre un usuario. La información dada es la siguiente:
+# Instrucciones del proyecto
+Descarga y prepara los datos.  Explica el procedimiento.
+Examina el equilibrio de clases. Entrena el modelo sin tener en cuenta el desequilibrio. Describe brevemente tus hallazgos.
+Mejora la calidad del modelo. Asegúrate de utilizar al menos dos enfoques para corregir el desequilibrio de clases. Utiliza conjuntos de entrenamiento y validación para encontrar el mejor modelo y el mejor conjunto de parámetros. Entrena diferentes modelos en los conjuntos de entrenamiento y validación. Encuentra el mejor. Describe brevemente tus hallazgos.
+Realiza la prueba final.
+# Descripción de los datos
+Puedes encontrar los datos en el archivo  /datasets/Churn.csv file. Descarga el conjunto de datos.
 
-сalls — número de llamadas,
-minutes — duración total de la llamada en minutos,
-messages — número de mensajes de texto,
-mb_used — Tráfico de Internet utilizado en MB,
-is_ultra — plan para el mes actual (Ultra - 1, Smart - 0).
+Características
+
+RowNumber: índice de cadena de datos
+CustomerId: identificador de cliente único
+Surname: apellido
+CreditScore: valor de crédito
+Geography: país de residencia
+Gender: sexo
+Age: edad
+Tenure: período durante el cual ha madurado el depósito a plazo fijo de un cliente (años)
+Balance: saldo de la cuenta
+NumOfProducts: número de productos bancarios utilizados por el cliente
+HasCrCard: el cliente tiene una tarjeta de crédito (1 - sí; 0 - no)
+IsActiveMember: actividad del cliente (1 - sí; 0 - no)
+EstimatedSalary: salario estimado
+Objetivo
+
+Exited: El cliente se ha ido (1 - sí; 0 - no)
